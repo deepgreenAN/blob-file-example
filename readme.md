@@ -1,4 +1,4 @@
-# dioxusのテンプレート(最適化済み)
+# blob・file apiのexample
 ```
 trunk serve --release
 ```
