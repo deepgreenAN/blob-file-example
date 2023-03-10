@@ -1,0 +1,29 @@
+[package]
+name = "dioxus_simple_template"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dioxus = "0.3.2"
+dioxus-web = "0.3.1"
+web-sys = { version = "0.3.61", features = ["Blob", "BlobPropertyBag", "Url", "HtmlAnchorElement", "HtmlInputElement", "FileList", "File", "FileReader"]}
+gloo-utils = "0.1.6"
+wasm-bindgen = "0.2.84"
+js-sys = "0.3.61"
+serde = "1.0.154"
+serde_json = "1.0.94"
+gloo-events = "0.1.2"
+gloo-console = "0.2.3"
+
+
+[profile.release]
+# less code to include into binary
+panic = 'abort'
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# optimization for size ( more aggressive )
+opt-level = 'z'
+# link time optimization using using whole-program analysis
+lto = true
